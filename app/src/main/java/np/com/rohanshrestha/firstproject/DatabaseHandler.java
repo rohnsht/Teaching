@@ -5,6 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.ArrayAdapter;
+
+import java.util.ArrayList;
+
+import np.com.rohanshrestha.firstproject.models.Student;
 
 /**
  * Created by rohan on 9/17/17.
@@ -19,6 +24,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private final String KEY_ID = "id";
     private final String KEY_NAME = "name";
     private final String KEY_ROLL = "roll";
+    private final String KEY_CLASS = "class";
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -27,7 +33,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String create_student_table = "CREATE TABLE " + STUDENT_TABLE + " ( " + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + KEY_NAME + " VARCHAR, " + KEY_ROLL + " INTEGER )";
+                + KEY_NAME + " VARCHAR, " + KEY_ROLL + " INTEGER," + KEY_CLASS + " VARCHAR )";
 
         db.execSQL(create_student_table);
     }
@@ -52,6 +58,45 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
 
         return r;
+    }
+
+    public long addStudent(Student student) {
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_NAME, student.getName());
+        values.put(KEY_ROLL, student.getRoll());
+        values.put(KEY_CLASS, student.getGrade());
+
+        long r = db.insert(STUDENT_TABLE, null, values);
+
+        db.close();
+
+        return r;
+    }
+
+    public ArrayList<Student> getAllStudent() {
+        ArrayList<Student> students = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+
+        String query = "Select * from " + STUDENT_TABLE;
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    Student student = new Student();
+                    student.setName(cursor.getString(cursor.getColumnIndex(KEY_NAME)));
+                    student.setRoll(cursor.getInt(cursor.getColumnIndex(KEY_ROLL)));
+                    student.setGrade(cursor.getString(cursor.getColumnIndex(KEY_CLASS)));
+
+                    students.add(student);
+                } while (cursor.moveToNext());
+            }
+        }
+        cursor.close();
+        db.close();
+        return students;
     }
 
     public String getStudent() {

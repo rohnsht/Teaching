@@ -29,11 +29,11 @@ public class SearcchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searcch);
 
-        ArrayList<String> list = new ArrayList<>();
-        list.add("Apple");
-        list.add("Samsung");
-        list.add("Sony");
-        list.add("Nokia");
+        ArrayList<String> mainList = new ArrayList<>();
+        mainList.add("Apple");
+        mainList.add("Samsung");
+        mainList.add("Sony");
+        mainList.add("Nokia");
 
         /*SearchView searchView = (SearchView) findViewById(R.id.search);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -54,7 +54,7 @@ public class SearcchActivity extends AppCompatActivity {
         rv_list.setLayoutManager(new LinearLayoutManager(this));
         //rv_list.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL));
 
-        adapter = new MyAdapter(this, list);
+        adapter = new MyAdapter(this, mainList);
         rv_list.setAdapter(adapter);
     }
 

@@ -10,6 +10,7 @@
     <string name="action_search">Search</string>
     <string name="dialog_ok">Ok</string>
     <string name="dialog_cancel">Cancel</string>
+    <string name="action_add">Add</string>
 
     <string-array name="colors_array">
         <item>Red</item>

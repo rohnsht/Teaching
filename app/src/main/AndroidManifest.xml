@@ -3,6 +3,8 @@
     package="np.com.rohanshrestha.firstproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -21,11 +23,15 @@
         <activity android:name=".SixthActivity" />
         <activity android:name=".seventhActivity" />
         <activity android:name=".SearcchActivity" />
-        <activity android:name=".EighthActivity"></activity>
-        <activity android:name=".NInthActivity">
+        <activity android:name=".EighthActivity" />
+        <activity android:name=".NInthActivity" />
+        <activity android:name=".TenthActivity" />
+        <activity android:name=".StudentListActivity"></activity>
+        <activity android:name=".NewStudentActivity" />
+        <activity android:name=".StorageActivity">
 
         </activity>
-        <activity android:name=".TenthActivity">
+        <activity android:name=".AsyncActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
