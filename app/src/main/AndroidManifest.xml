@@ -26,12 +26,16 @@
         <activity android:name=".EighthActivity" />
         <activity android:name=".NInthActivity" />
         <activity android:name=".TenthActivity" />
-        <activity android:name=".StudentListActivity"></activity>
+        <activity android:name=".StudentListActivity" />
         <activity android:name=".NewStudentActivity" />
-        <activity android:name=".StorageActivity">
+        <activity android:name=".StorageActivity" />
+        <activity android:name=".AsyncActivity"></activity>
+        <activity android:name=".RetroActivity">
 
         </activity>
-        <activity android:name=".AsyncActivity">
+        <activity
+            android:name=".DesignActivity"
+            android:theme="@style/AppTheme.NoActionbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

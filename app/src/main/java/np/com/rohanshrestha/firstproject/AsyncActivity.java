@@ -2,8 +2,8 @@ package np.com.rohanshrestha.firstproject;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -13,16 +13,12 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-
-import javax.net.ssl.HttpsURLConnection;
 
 import np.com.rohanshrestha.firstproject.models.Flower;
 
@@ -41,15 +37,16 @@ public class AsyncActivity extends AppCompatActivity {
         tv_result = (TextView) findViewById(R.id.tv_result);
 
         new CustomTask().execute(url);
-
     }
 
     public void postClicked(View view) {
-        String name = "Ram";
+        String username = "Ram";
+        String email = "asdasd";
         String password = "123456";
-        String url = "https://postman-echo.com/post";
 
-        new PostTask().execute(url, name, password);
+        String url = "http://192.168.100.152/android1/insert.php";
+
+        new PostTask().execute(url, username, email, password);
 
     }
 
@@ -139,15 +136,16 @@ public class AsyncActivity extends AppCompatActivity {
         protected String doInBackground(String... params) {
             String urlString = params[0];
             String name = params[1];
-            String pass = params[2];
+            String email = params[2];
+            String pass = params[3];
             String res = null;
 
-            String postParams = "name=" + name + "&password=" + pass;
+            String postParams = "username=" + name + "&email=" + email;
 
             try {
                 URL url = new URL(urlString);
 
-                HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("POST");
                 conn.setReadTimeout(10000);
                 conn.setConnectTimeout(10000);
