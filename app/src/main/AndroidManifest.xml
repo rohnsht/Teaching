@@ -29,13 +29,19 @@
         <activity android:name=".StudentListActivity" />
         <activity android:name=".NewStudentActivity" />
         <activity android:name=".StorageActivity" />
-        <activity android:name=".AsyncActivity"></activity>
-        <activity android:name=".RetroActivity">
-
-        </activity>
+        <activity android:name=".AsyncActivity" />
+        <activity android:name=".RetroActivity" />
         <activity
             android:name=".DesignActivity"
+            android:theme="@style/AppTheme.NoActionbar" />
+        <activity
+            android:name=".NavigationDrawerActivity"
+            android:theme="@style/AppTheme.NoActionbar"></activity>
+        <activity
+            android:name=".TabActivity"
             android:theme="@style/AppTheme.NoActionbar">
+        </activity>
+        <activity android:name=".BottomNavActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
