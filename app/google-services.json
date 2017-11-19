@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "247188349179",
+    "firebase_url": "https://teaching-4f3d5.firebaseio.com",
+    "project_id": "teaching-4f3d5",
+    "storage_bucket": "teaching-4f3d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247188349179:android:94a266a7ad75b911",
+        "android_client_info": {
+          "package_name": "np.com.rohanshrestha.firstproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247188349179-3e9l80573oiild0obcqcrc6s27csheda.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIoThKGxXLksqUPqu2V7txp65fwL0J5gQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
